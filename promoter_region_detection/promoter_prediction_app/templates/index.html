@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promoter Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Promoter Prediction</h1>
+    <form action="/predict" method="post">
+        <textarea name="sequence" rows="4" cols="50" placeholder="Enter DNA sequence..."></textarea><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if sequence %}
+        <p><strong>Sequence:</strong> {{ sequence }}</p>
+        <p><strong>Result:</strong> {{ result }}</p>
+    {% endif %}
+</body>
+</html>
